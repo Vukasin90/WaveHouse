@@ -1,0 +1,358 @@
+.hero {
+    height: 700px;
+}
+
+.logo {
+    width: 200px;
+    padding-top: 20px;
+    cursor: pointer;
+    img {
+        width: 100%;
+    }
+    @include mq(900px) {
+        padding-left: 5%;
+    }
+    @include mq(1190px) {
+        padding-left: 5%;
+    }
+}
+
+@include mq-L(1191px) {
+    .navigation {
+        width: 100px;
+        background: $blue;
+        width: 270px;
+        position: absolute;
+        bottom: -1190px;
+        left: 0px;
+        z-index: 2;
+        h3 {
+            padding: 24px 40px;
+            background: $grey;
+        }
+        ul {
+            padding: 10px 0;
+            li {
+                padding: 10px 40px;
+                text-transform: uppercase;
+                list-style: none;
+                cursor: pointer;
+                a {
+                    font-weight: bold;
+                }
+                &:hover {
+                    background: $grey;
+                }
+                &:hover a {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .lang {
+        position: absolute;
+        top: -632px;
+        right: -880px;
+        color: $white;
+        cursor: pointer;
+        .lang-arrow {
+            @include arrowDown(6px, $white);
+            display: inline-block;
+            margin: 0 0 2px 5px;
+        }
+    }
+}
+
+@include mq(1190px) {
+    .navigation {
+        width: 100px;
+        background: $blue;
+        width: 320px;
+        position: fixed;
+        top: 0;
+        right: 0px;
+        bottom: 0;
+        z-index: 10;
+        transform: translateX(320px);
+        overflow: scroll;
+        h3 {
+            color: $black;
+            display: inline-block;
+        }
+        ul {
+            padding: 0px 0;
+            li {
+                padding: 20px 40px;
+                text-transform: uppercase;
+                list-style: none;
+                cursor: pointer;
+                a {
+                    font-weight: bold;
+                }
+                &:hover {
+                    background: $grey;
+                }
+                &:hover a {
+                    color: $white;
+                }
+            }
+        }
+        .nav-title {
+            padding: 24px 40px;
+            background: $grey;
+            width: 100%;
+        }
+        .lang {
+            position: static;
+            display: inline-block;
+            margin-left: 112px;
+            color: $white;
+            .lang-arrow {
+                @include arrowDown(6px, $white);
+                display: inline-block;
+                margin: 0 0 2px 5px;
+            }
+        }
+    }
+
+    .hamburger-wrapper {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        z-index: 2;
+        right: 5%;
+        top: 28px;
+    }
+
+    .hamburger {
+        width: 40px;
+        height: 3px;
+        background: $white;
+        &::before, &::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 3px;
+            background: $white;
+        }
+        &::before {
+            transform: translateY(-9px);
+        }
+        &::after {
+            transform: translateY(6px);
+        }
+    }
+
+    .close-hamburger {
+        width: 21px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        top: 35px;
+        right: 17px;
+        transform: rotateZ(-48deg);
+        z-index: 2;
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 21px;
+            height: 2px;
+            background: #fff;
+            transform: rotateZ(-89deg) translateX(12px);
+        }
+    }
+
+    .toggle-hamburger {
+        transform: translateX(0px);
+        transition: all 500ms ease-in-out;
+    }
+}
+
+.welcome-intro {
+    background: $yellow;
+    width: 270px;
+    height: 300px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 80px 25px;
+    margin-top: 240px;
+    text-align: left;
+    position: absolute;
+    left: 0px;
+    top: 98px;
+    z-index: 2;
+    h1 {
+        text-transform: uppercase;
+        font-size: 30px;
+        line-height: 0.9;
+        color: $grey;
+    }
+    p {
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 30px;
+        color: $grey;
+    }
+    @include mq(1190px) {
+        margin-left: 5%;
+    }
+    @include mq(900px) {
+        right: 0;
+        bottom: 0;
+        width: auto;
+        top: 271px;
+        left: 0px;
+        height: 189px;
+        padding: 31px 15px;
+        margin-left: 0;
+        text-align: center
+    }
+}
+
+.promotion-intro {
+    float: right;
+    width: 421px;
+    height: 290px;
+    padding-right: 100px;
+    margin-top: 140px;
+    position: relative;
+    h2 {
+        text-transform: uppercase;
+        color: $yellow;
+        font-size: 50px;
+        line-height: 0.8;
+        @include mq(555px) {
+            font-size: 38px;
+        }
+    }
+    p {
+        color: $yellow;
+        font-size: 21px;
+        margin-top: 5px;
+        @include mq(555px) {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    }
+    @include mq(900px) {
+        float: none;
+        margin-top: 70px;
+        padding: 0 0 0 5%;
+        width: 300px;
+    }
+}
+
+.nav-buttons {
+    position: absolute;
+    right: 0px;
+    top: 316px;
+    width: 60px;
+    height: 50px;
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    background: $white;
+    z-index: 2;
+    @include mq(1190px) {
+        right: 5%;
+    }
+    @include mq(900px) {
+        top: 240px;
+    }
+    @include mq(555px) {
+        top: 310px;
+    }
+}
+
+.prev, .next {
+    display: inline-block;
+    padding: 16px 4px;
+    cursor: pointer;
+}
+
+.next {
+    background: $yellow;
+}
+
+.hero-cta {
+    margin-top: 50px;
+    width: 125px;
+    height: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $grey;
+    background: $yellow;
+    border: none;
+    cursor: pointer;
+    @include mq(900px) {
+        margin-top: 25px;
+    }
+}
+
+.swiper-container {
+    height: 700px;
+    width: 100%;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-repeat: no-repeat !important;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    @include mq (900px) {
+        bottom: 220px;
+    }
+}
+
+.swiper-pagination-bullet {
+    width: 40px;
+    height: 4px;
+    display: inline-block;
+    border-radius: 0;
+    background: $yellow;
+    opacity: 1;
+    margin-right: 10px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #ff4a03;
+}
+
+//Lightbox
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba($black, 0.8);
+    z-index: 10;
+    display: none;
+    .img-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.lightbox-toggle {
+    display: block;
+    animation: bounceIn 1s 
+}

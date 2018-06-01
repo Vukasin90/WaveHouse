@@ -1,0 +1,80 @@
+.footer-nav {
+    width: 100%;
+    background: rgba($grey, 0.90);
+    @include mq(1085px) {
+        padding-left: 10%;
+    }
+}
+
+.nav-wrap {
+    padding: 75px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    @include mq(1190px) {
+        padding: 75px 20px;
+    }
+}
+
+.f-nav {
+    display: inline-block;
+    margin-right: 100px;
+    h3 {
+        color: $white;
+    }
+    ul {
+        margin-top: 10px;
+        li {
+            list-style: none;
+            a {
+                color: $white;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    @include mq(1085px) {
+        margin-bottom: 10px;
+    }
+}
+
+.about-us {
+    display: inline-block;
+    width: 320px;
+    margin-left: auto;
+    h3 {
+        color: $white;
+    }
+    p {
+        color: $white;
+    }
+    span {
+        color: $white;
+        margin-right: 15px;
+    }
+    @include mq(1085px) {
+        margin: 20px 0;
+    }
+}
+
+#alt-mail {
+    color: $yellow;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.phone {
+    margin-top: 20px;
+}
+
+.copyright {
+    padding: 14px;
+    background: $grey;
+    span {
+        color: $white;
+        font-size: 14px;
+    }
+}

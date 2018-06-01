@@ -1,0 +1,153 @@
+.products {
+    width: 100%;
+    @include clear-fix;
+    position: relative;
+}
+
+.ad {
+    position: absolute;
+    top: 530px;
+    width: 270px;
+    img {
+        width: 100%;
+    }
+    @include mq(1190px) {
+        display: block;
+        position: static;
+        margin: 0 auto;
+        width: 50%;
+    }
+    @include mq(550px) {
+        width: 100%;
+    }
+}
+
+.articles {
+    display: inline-block;
+    position: absolute;
+    top: 1300px;
+    width: 205px;
+    h3 {
+        font-size: 24px;
+    }
+    ul {
+        margin: 20px 0;
+    }
+    li {
+        list-style-type: none;
+        margin-top: 10px;
+        a {
+            color: $grey;
+        }
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include mq(1190px) {
+        display: none;
+    }
+}
+
+.view-all {
+    margin-top: 20px;
+    color: $black;
+    font-weight: bold;
+    cursor: pointer;
+    &::after {
+        content: '\e802';
+        margin-left: 5px;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.products-promo {
+    width: 871px;
+    background: $white;
+    float: right;
+    position: relative;
+    top: -16px;
+    z-index: 2;
+    padding: 0px 0px 26px 16px;
+    @include mq(1190px) {
+        float: none;
+        position: static;
+        width: 100%;
+    }
+}
+
+.product-title {
+    padding: 26px 0px;
+    h3 {
+        font-size: 26px;
+        text-transform: uppercase;
+        color: $grey;
+        span {
+            font-size: 14px;
+            color: $grey;
+            font-weight: 100;
+            cursor: pointer;
+            &:first-child {
+                margin-left: 65%;
+            }
+            @include mq(901px) {
+                display: none;
+            }
+        }
+        @include mq(900px) {
+            display: inline-block;
+        }
+    }
+    @include mq(850px) {
+        text-align: center;
+    }  
+}
+
+.product-item {
+    width: 272px;
+    height: 317px;
+    display: inline-block;
+    margin-right: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    &:nth-child(3n+1) {  
+        margin-right: 0px;
+      }
+    img {
+        width: 272px;
+        height: 232px;
+        @include mq(850px) {
+            width: 100%;
+        }   
+    }
+    figcaption {
+        padding: 20px 10px;
+        font-weight: bold;
+        color: $grey;
+    }
+    &:hover img{
+        animation: bounceIn 500ms;
+    }
+    span {
+        margin-left: 54px;
+    }
+    @include mq(850px) {
+        max-width: 100%;
+    }
+}
+
+.item {
+    margin-bottom: 75px; 
+}
+
+.fig-wrap {
+    display: inline-block;
+    @include mq(850px) {
+        display: block;
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+    }
+}
+
